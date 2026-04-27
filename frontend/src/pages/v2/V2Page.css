@@ -1,0 +1,195 @@
+.v2-container {
+    min-height: 100vh;
+    background: var(--bg-main);
+    background-image: var(--hero-mesh);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background 0.5s ease;
+    overflow-x: hidden;
+}
+
+/* Navbar and Global UI classes removed as they are in Header.css/index.css */
+
+/* Hero Section */
+.v2-hero {
+    padding: 160px 5% 100px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: var(--primary-glow);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.v2-hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.v2-hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+.v2-search-box {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: var(--shadow);
+    border-radius: 20px;
+}
+
+.v2-search-input {
+    width: 100%;
+    padding: 1.25rem 2.5rem;
+    padding-left: 3.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.v2-search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.v2-search-icon {
+    position: absolute;
+    left: 1.2rem;
+    top: 52%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+/* Bento Grid */
+.v2-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5% 100px;
+}
+
+.v2-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 2rem;
+}
+
+.v2-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 2.5rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.v2-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.v2-icon-box {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--primary) 0%, #ec4899 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px -5px var(--primary-glow);
+}
+
+.v2-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.v2-card-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.v2-tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.v2-tag {
+    background: var(--bg-main);
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.v2-tag:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Tool Detail (Hover) */
+.v2-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at top right, var(--primary-glow), transparent 70%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.v2-card:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .v2-nav {
+        padding: 0 5%;
+    }
+
+    .v2-hero {
+        padding-top: 120px;
+    }
+
+    .v2-grid {
+        grid-template-columns: 1fr;
+    }
+}
